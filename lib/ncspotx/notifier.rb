@@ -1,4 +1,4 @@
-module Xncspot
+module Ncspotx
     class Notifier
         def initialize
             @deduper = Deduper.new

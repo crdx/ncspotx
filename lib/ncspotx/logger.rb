@@ -1,4 +1,4 @@
-module Xncspot
+module Ncspotx
     class Logger
         def initialize
             @deduper = Deduper.new

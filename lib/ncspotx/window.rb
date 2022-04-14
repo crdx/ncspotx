@@ -1,4 +1,4 @@
-module Xncspot
+module Ncspotx
     class Window
         def initialize(window_class)
             @window_class = window_class

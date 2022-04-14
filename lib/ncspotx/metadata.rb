@@ -1,4 +1,4 @@
-module Xncspot
+module Ncspotx
     class Metadata
         SEP = "\t"
 

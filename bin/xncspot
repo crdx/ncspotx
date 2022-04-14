@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 trap(:SIGINT) { puts; exit 130 }
-require_relative '../lib/xncspot'
+require_relative '../lib/ncspotx'
 
 # playerctl --no-messages --follow -p ncspot metadata \
 #     --format '{{ status }}|{{ artist }}|{{ title }}|{{ album }}'
@@ -10,7 +10,7 @@ def metadata_change
         '--no-messages',
         '--follow',
         '-p', 'ncspot',
-        '--format', Xncspot::Metadata.get_format,
+        '--format', Ncspotx::Metadata.get_format,
         'metadata',
     ]
 
@@ -19,7 +19,7 @@ def metadata_change
     while (line = io.gets.chomp)
         next if line.empty?
 
-        metadata = Xncspot::Metadata.from(line)
+        metadata = Ncspotx::Metadata.from(line)
         if metadata.valid?
             yield metadata
         end
@@ -32,9 +32,9 @@ if ARGV.length == 0 || ARGV.first.empty?
 end
 
 Thread.new do
-    window = Xncspot::Window.new(ARGV.first)
-    logger = Xncspot::Logger.new
-    notifier = Xncspot::Notifier.new
+    window = Ncspotx::Window.new(ARGV.first)
+    logger = Ncspotx::Logger.new
+    notifier = Ncspotx::Notifier.new
 
     metadata_change do |metadata|
         window.set_title(metadata)

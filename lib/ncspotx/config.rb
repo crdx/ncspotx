@@ -1,7 +1,7 @@
-module Xncspot
+module Ncspotx
     class Config
         def load_config
-            path = File.expand_path('~/.config/xncspot/config.yml')
+            path = File.expand_path('~/.config/ncspotx/config.yml')
 
             if !File.directory?(File.dirname(path))
                 FileUtils.mkdir_p(File.dirname(path))
