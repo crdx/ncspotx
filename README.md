@@ -41,4 +41,4 @@ Open an [issue](https://github.com/crdx/ncspotx/issues) or send a [pull request]
 
 ## Licence
 
-[MIT](LICENCE.md).
+[GPLv3](LICENCE).
